@@ -37,10 +37,12 @@ function RegisterWindow:new(o)
 
     -- getting frame and visual stuffs ready
     self.gui = guih.create_gui(term.current())
+    local termWidth, termHeight = term.getSize()
     self.parentFrame, self.frame = window_manager.createWindow(
         self.gui,
         {
             width = 45, height = 19,
+            x=math.ceil(termWidth/2-10), y=math.ceil(termHeight/2-4),
             title = "Authentication manager",
             on_quit = function() self.running=false end
         }
@@ -119,7 +121,7 @@ function RegisterWindow:placeScreen1()
     self.screen1 = {}
     self.screen1.username = self.child.create.inputbox({
         name="username",
-        x=10, y=3, width=10,
+        x=17, y=3, width=10,
         selected=true,
         background_color=colors.gray,
     })

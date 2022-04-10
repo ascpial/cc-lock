@@ -37,7 +37,6 @@ function AuthenticationWindow:new(o)
 
     self.gui = guih.create_gui(term.current())
     local termWidth, termHeight = term.getSize()
-    print(termHeight, termWidth)
     self.parentFrame, self.frame = window_manager.createWindow(
         self.gui,
         {

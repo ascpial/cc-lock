@@ -31,7 +31,7 @@ local function createWindow(gui, data)
     local frame = gui.create.frame(
         {
             name=title,
-            x=1, y=1,
+            x=data.x or 1, y=data.y or 1,
             width=width,
             height=height,
         }  
