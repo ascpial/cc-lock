@@ -42,7 +42,7 @@ function RegisterWindow:new(o)
         self.gui,
         {
             width = 45, height = 19,
-            x=math.ceil(termWidth/2-10), y=math.ceil(termHeight/2-4),
+            x=math.ceil((termWidth-45)/2), y=math.ceil((termHeight-19)/2),
             title = "Authentication manager",
             on_quit = function() self.running=false end
         }
