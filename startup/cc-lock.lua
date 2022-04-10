@@ -16,7 +16,7 @@ local function main()
     end
 end
 
-if not fs.exists("credentials") then
+if not fs.exists(".credentials") then
     print("Use the register command to lock the computer.")
 else
     shell.setDir("/")
