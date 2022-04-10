@@ -1,4 +1,5 @@
 fs.makeDir("/cc-lock")
+fs.makeDir("/startup")
 
 local github_api = http.get("https://api.github.com/repos/ascpial/cc-lock/git/trees/main?recursive=1")
 local list = textutils.unserialiseJSON(github_api.readAll())
