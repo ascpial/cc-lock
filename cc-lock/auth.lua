@@ -209,6 +209,8 @@ function AuthenticationWindow:start()
             end
         end
     )
+
+    term.setCursorPos(1, 1) -- reset the terminal
 end
 
 return AuthenticationWindow

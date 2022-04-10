@@ -42,7 +42,7 @@ function RegisterWindow:new(o)
         self.gui,
         {
             width = 45, height = 19,
-            x=math.ceil((termWidth-45)/2), y=math.ceil((termHeight-19)/2),
+            x=math.ceil((termWidth-45)/2), y=math.ceil((termHeight-18)/2),
             title = "Authentication manager",
             on_quit = function() self.running=false end
         }
@@ -307,6 +307,8 @@ function RegisterWindow:start()
             end 
         end
     )
+
+    term.setCursorPos(1, 1) -- reset the terminal cursor
 end
 
 local registerWindow = RegisterWindow:new(nil)
