@@ -5,7 +5,7 @@ local function main()
     if not fs.exists("credentials") then
         print("Use the register command to lock the computer.")
     else
-        local auth_manager = dofile("/cc-lock/auth.lua")
+        local auth_manager = require("auth")
 
         local authWindow = auth_manager:new()
         
@@ -21,6 +21,7 @@ local function main()
 end
 
 shell.setDir("/")
-local shield = dofile("/cc-lock/shield.lua")
+package.path = "/cc-lock/"
+local shield = require("shield")
 shield(main)
 shell.setDir("/startup")
