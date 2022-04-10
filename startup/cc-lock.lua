@@ -20,5 +20,5 @@ local function main()
     end
 end
 
-local shield = require("cc-lock.shield")
+local shield = require("/cc-lock.shield")
 shield(main)
