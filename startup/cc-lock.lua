@@ -21,7 +21,7 @@ local function main()
 end
 
 shell.setDir("/")
-package.path = package.path .. ";/cc-lock/?;/cc-lock/?.lua"
+package.path = package.path .. ";/cc-lock/?;/cc-lock/?.lua;/?;/?.lua;/?/init.lua"
 local shield = require("shield")
 shield(main)
 shell.setDir("/startup")
