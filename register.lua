@@ -278,7 +278,7 @@ function RegisterWindow:screen2Continue()
 end
 
 function RegisterWindow:saveCredential(filename)
-    filename = filename or "credentials"
+    filename = filename or ".credentials"
     local file = fs.open(filename, 'w')
     local credentials = {
         username=self.input.username,

@@ -61,7 +61,7 @@ function AuthenticationWindow:new(o)
 end
 
 function AuthenticationWindow:loadCredentials(filename)
-    filename = "credentials" or filename
+    filename = filename or ".credentials"
     local file = fs.open(filename, 'r')
     self.credentials = textutils.unserialiseJSON(file.readAll())
     file.close()
