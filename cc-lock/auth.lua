@@ -102,7 +102,7 @@ function AuthenticationWindow:placeGlobalScreen()
         x=1, y=6, height=1, width=6,
         text=self.gui.text({
             text="Cancel",
-            blit={"000000", "EEEEEE"},
+            blit={"000000", "eeeeee"},
         }),
         on_click = function() self.running = false end
     })
@@ -111,7 +111,7 @@ function AuthenticationWindow:placeGlobalScreen()
         x=14, y=6, height=1, width=5,
         text=self.gui.text({
             text="Login",
-            blit={"00000", "DDDDD"},
+            blit={"00000", "ddddd"},
         }),
         on_click=function() self:login() end
     })

@@ -5,7 +5,7 @@ Canvas = {
     height = 0,
     screen = {},
     foreground="0",
-    background="F",
+    background="f",
 }
 
 function Canvas:new(o, term, width, height, fg, bg)
@@ -18,7 +18,7 @@ function Canvas:new(o, term, width, height, fg, bg)
     self.height = height or 1
     self.screen = {}
     self.foreground = fg or "0"
-    self.background = bg or "F"
+    self.background = bg or "f"
     self:_ClearScreen()
     return o
 end
@@ -78,10 +78,6 @@ function Canvas:getBgColor(line, column)
     else
         return self.foreground
     end
-end
-
-local function convertColorString(color)
-    return string.sub("01234556789ABCDEF", color, 1)
 end
 
 function Canvas:refresh()

@@ -92,7 +92,7 @@ function RegisterWindow:placeGlobalScreen()
         x=1, y=15, height=3, width=8,
         text=self.gui.text({
             text="Cancel",
-            blit={"FFFFFF", "EEEEEE"}
+            blit={"ffffff", "eeeeee"}
         }),
         background_color=colors.red,
         on_click=function()
@@ -104,7 +104,7 @@ function RegisterWindow:placeGlobalScreen()
         x=34, y=15, height=3, width=10,
         text=self.gui.text({
             text="Continue",
-            blit={"FFFFFFFF", "DDDDDDDD"}
+            blit={"ffffffff", "dddddddd"}
         }),
         background_color=colors.green,
         on_click=function() self:screen1Continue() end,
