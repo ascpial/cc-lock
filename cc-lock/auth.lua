@@ -207,10 +207,10 @@ function AuthenticationWindow:start()
             while self.running do
                 sleep()
             end
+            self.gui.term_object.clear()
+            self.gui.term_object.setCursorPos(1, 1) -- reset the terminal
         end
     )
-
-    term.setCursorPos(1, 1) -- reset the terminal
 end
 
 return AuthenticationWindow
