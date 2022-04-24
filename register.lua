@@ -304,11 +304,11 @@ function RegisterWindow:start()
         function ()
             while self.running do
                sleep()
-            end 
+            end
+            self.gui.term_object.clear()
+            self.gui.term_object.setCursorPos(1, 1) -- reset the terminal
         end
     )
-
-    term.setCursorPos(1, 1) -- reset the terminal cursor
 end
 
 local registerWindow = RegisterWindow:new(nil)
