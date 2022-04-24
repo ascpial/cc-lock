@@ -2,7 +2,7 @@
 
 Computer craft lock is a simple lua program that add two factors authentication to your computer.
 
-For now, you can bypass the lock by just putting the computer in a disk drive, but encryption is planned.
+:warning: For now, you can bypass the lock by just putting the computer in a disk drive, but encryption is planned.
 
 To install the program, you can use the following command in your computer:
 
