@@ -27,6 +27,7 @@ RegisterWindow = {
         otpInstance={},
     },
     marginX=1, -- indicate the size of the qrcode in screen2
+    registered=false,
 }
 
 function RegisterWindow:new(o)
@@ -272,6 +273,7 @@ function RegisterWindow:screen2Continue()
         self.window.write("your credentials")
         self.globalScreen.continue.on_click = function()
             self:saveCredential()
+            self.registered = true
             self.running = false
         end
     end
@@ -307,6 +309,11 @@ function RegisterWindow:start()
             end
             self.gui.term_object.clear()
             self.gui.term_object.setCursorPos(1, 1) -- reset the terminal
+            if self.registered then
+                print("Your credentials have been saved.")
+                print("To improve security, check if the setting allow_disk_startup is set to false.")
+                print("If you want to disable the lock, you can delete the .credentials file, or run the command \"set shell.allow_startup false\".")
+            end
         end
     )
 end
