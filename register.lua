@@ -90,9 +90,11 @@ function RegisterWindow:placeGlobalScreen()
     self.globalScreen.cancel = self.child.create.button({
         name="cancel",
         x=1, y=15, height=3, width=8,
-        text=self.gui.text({
+        text=self.child.text({
             text="Cancel",
-            blit={"ffffff", "eeeeee"}
+            blit={"ffffff", "eeeeee"},
+            transparent=true,
+            centered=true
         }),
         background_color=colors.red,
         on_click=function()
@@ -102,8 +104,10 @@ function RegisterWindow:placeGlobalScreen()
     self.globalScreen.continue = self.child.create.button({
         name="continue",
         x=34, y=15, height=3, width=10,
-        text=self.gui.text({
+        text=self.child.text({
             text="Continue",
+            transparent=true,
+            centered=true,
             blit={"ffffffff", "dddddddd"}
         }),
         background_color=colors.green,
@@ -157,8 +161,6 @@ function RegisterWindow:hideScreen1()
     end
     self:clearContent()
 end
-
-
 function RegisterWindow:drawScreen2()
     self:writeAt(self.marginX, 1, "Setup 2FA")
     self:writeAt(self.marginX, 3, "Your secret key is:")
