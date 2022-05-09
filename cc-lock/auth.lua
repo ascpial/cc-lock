@@ -100,7 +100,7 @@ function AuthenticationWindow:placeGlobalScreen()
     self.globalScreen.cancel = self.child.create.button({
         name="cancel",
         x=1, y=6, height=1, width=6,
-        text=self.gui.text({
+        text=self.child.text({
             text="Cancel",
             blit={"000000", "eeeeee"},
         }),
@@ -109,7 +109,7 @@ function AuthenticationWindow:placeGlobalScreen()
     self.globalScreen.login = self.child.create.button({
         name="login",
         x=14, y=6, height=1, width=5,
-        text=self.gui.text({
+        text=self.child.text({
             text="Login",
             blit={"00000", "ddddd"},
         }),
