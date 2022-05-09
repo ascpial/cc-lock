@@ -47,7 +47,7 @@ local function createWindow(gui, data)
 
     child.create.button({
         name=frame.name .. "QuitButton",
-        text=gui.text({text="x",blit={"E", "8"}}),
+        text=child.text({text="x",blit={"E", "8"}}),
         x=width-1, y=1, width=1, height=1,
         on_click = data.on_quit or function(component)
             print("hue?")
@@ -56,7 +56,7 @@ local function createWindow(gui, data)
     
     child.create.button({
         name=frame.name .. "MinimizetButton",
-        text=gui.text({text="_",blit={"1", "8"}}),
+        text=child.text({text="_",blit={"1", "8"}}),
         x=width-3, y=1, width=1, height=1,
         on_click = data.on_reduce or function(component)
             frame.visible=false
@@ -65,7 +65,7 @@ local function createWindow(gui, data)
 
     child.create.button({
         name=frame.name .. "MaximiseButton",
-        text=gui.text({text="\23",blit={"D", "8"}}),
+        text=child.text({text="\23",blit={"D", "8"}}),
         x=width-5, y=1, width=1, height=1,
         on_click = data.on_maximise or function(component) end
     })
