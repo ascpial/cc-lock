@@ -855,7 +855,7 @@ local function number_to_bit( num, length )
  util.build_uri = function(secret, name, initial_count, issuer_name, algorithm, digits, period)
      local is_init_set = initial_count ~= nil
      
-     local is_algo_set = (algorithm ~= nil) and algorithm ~= "sha1"
+     local is_algo_set = (algorithm ~= nil) and algorithm ~= "SHA1"
      local is_digi_set = digits ~= nil
      local is_peri_set = period ~= nil
      
