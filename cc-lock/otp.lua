@@ -79,7 +79,7 @@
 	> TOTP
 		AuthKey at(OTP instance, UNIXTime for_time, Number counter_offset=0)
 		AuthKey now(OTP instance)
-		Boolean verify(OTP instance, AuthKey key, UNIXTime for_time=os.time(), Number valid_window=0)
+		Boolean verify(OTP instance, AuthKey key, UNIXTime for_time=os.time('utc'), Number valid_window=0)
 		OTPURI as_uri(OTP instance, String name, String issuer_name)
 		TimeCode timecode(OTP instance, UNIXTime for_time)
 		
@@ -136,7 +136,7 @@
 	local OTP = require(game.Workspace.OTP)("TOTP") -- "totp" is accepted
 	
 	local _base_key = util.random_base32() -- you wouldn't use random keys for multiple sessions, as you couldn't auth anymore with the user
-	local _timestamp = os.time() -- the current time in seconds without decimals
+	local _timestamp = os.time('utc') -- the current time in seconds without decimals
 	
 	local data = OTP.new(_base_key, 6, "sha1", 30) -- 6 and "sha1" are constant because support issues with google authenticator
 													-- however, 30secs is default and recommended the lasting time of the key
@@ -855,7 +855,7 @@ local function number_to_bit( num, length )
  util.build_uri = function(secret, name, initial_count, issuer_name, algorithm, digits, period)
      local is_init_set = initial_count ~= nil
      
-     local is_algo_set = (algorithm ~= nil) and algorithm ~= "sha1"
+     local is_algo_set = (algorithm ~= nil) and algorithm ~= "SHA1"
      local is_digi_set = digits ~= nil
      local is_peri_set = period ~= nil
      
@@ -1003,14 +1003,14 @@ local function number_to_bit( num, length )
  end
  
  totp.now = function(instance)
-     return otp.generate_otp(instance, totp.timecode(instance, os.time()))
+     return otp.generate_otp(instance, totp.timecode(instance, os.time('utc')))
  end
  
  totp.verify = function(instance, key, for_time, valid_window)
      valid_window = valid_window or 0
      
      if (for_time == nil) then
-         for_time = os.time()
+         for_time = os.time('utc')
      end
      
      if (valid_window > 0) then
